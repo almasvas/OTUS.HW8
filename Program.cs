@@ -4,17 +4,21 @@
     {
         static void Main(string[] args)
         {
-            Dog dog = new Dog("Тузик", 5, true, "Немецкая овчарка");
-            Cat cat = new Cat("Пушок", 3, true, "Серый");
+            ElectricCar tesla = new ElectricCar("Tesla", "Model S", 4, 100);
+            ElectricCar clonedTesla = (ElectricCar)tesla.Clone();
+            ElectricCar myClonedTesla = (ElectricCar)tesla.MyClone();
 
-            Dog clonedDog = (Dog)dog.Clone();
-            Cat clonedCat = (Cat)cat.Clone();
+            Console.WriteLine($"Оригинальный объект Tesla: {tesla.Brand}, {tesla.Model}, Дверей: {tesla.NumberOfDoors}, Батарея: {tesla.BatteryCapacity}");
+            Console.WriteLine($"Клонированный ICloneable объект Tesla: {clonedTesla.Brand}, {clonedTesla.Model}, Дверей: {clonedTesla.NumberOfDoors}, Батарея: {clonedTesla.BatteryCapacity}");
+            Console.WriteLine($"Клонированный IMyCloneable объект Tesla: {myClonedTesla.Brand}, {myClonedTesla.Model}, Дверей: {myClonedTesla.NumberOfDoors}, Батарея: {myClonedTesla.BatteryCapacity}");
 
-            Console.WriteLine($"Оригинальная собака: {dog.Name}, Порода: {dog.Breed}");
-            Console.WriteLine($"Клонированная собака: {clonedDog.Name}, Порода: {clonedDog.Breed}");
+            Bike mountainBike = new Bike("Giant", "Trance", "Mountain");
+            Bike clonedBike = (Bike)mountainBike.Clone();
+            Bike myClonedBike = (Bike)mountainBike.MyClone();
 
-            Console.WriteLine($"Оригинальный Кот: {cat.Name}, Цвет: {cat.Color}");
-            Console.WriteLine($"Клонированный Кот: {clonedCat.Name}, Цвет: {clonedCat.Color}");
+            Console.WriteLine($"Оригинальный объект Bike: {mountainBike.Brand}, {mountainBike.Model}, Тип: {mountainBike.Type}");
+            Console.WriteLine($"Клонированный ICloneable объект Bike: {clonedBike.Brand}, {clonedBike.Model}, Тип: {clonedBike.Type}");
+            Console.WriteLine($"Клонированный IMyCloneable объект Bike: {myClonedBike.Brand}, {myClonedBike.Model}, Тип: {myClonedBike.Type}");
         }
     }
 }

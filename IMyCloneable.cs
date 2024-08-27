@@ -2,6 +2,6 @@
 {
     public interface IMyCloneable<T>
     {
-        T Clone();
+        T MyClone();
     }
 }
